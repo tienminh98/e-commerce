@@ -1,30 +1,37 @@
 <div class="home-page">
   <section class="banner mt-3 mb-5">
-    <img src="content/images/saksoff.jpeg" alt="saksoff" style="width: 190px;height: 150px;">
+    <img src="content/images/l-address.jpg" alt="address" style="width: 350px;height: 168px;">
   </section>
   <section class="info">
     <form nz-form [formGroup]="userForm" (ngSubmit)="submitForm()">
       <nz-form-item class="mb-4">
-        <nz-form-control style="text-align: left"  [nzSm]="24" [nzXs]="24" nzErrorTip="Please input your name">
-          <input class="custom-input" nz-input formControlName="recipient_name" placeholder="Please enter your name" id="name" />
+        <nz-form-control style="text-align: left" [nzSm]="24" [nzXs]="24" nzErrorTip="Please input your name!">
+          <nz-input-group class="custom-input" [nzSuffix]="isShowTick('recipient_name') ? tick : noTick">
+            <input class="custom-input" nz-input formControlName="recipient_name" placeholder="Please enter your name" id="name" />
+          </nz-input-group>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item class="mb-4">
-        <nz-form-control style="text-align: left"  [nzSm]="24" [nzXs]="24" nzErrorTip="Please input your phone number!">
-          <input class="custom-input" nz-input formControlName="contact_phone" placeholder="Please enter your username or mobile number" id="phone" />
+        <nz-form-control style="text-align: left" [nzSm]="24" [nzXs]="24" nzErrorTip="Please input your phone number!">
+          <nz-input-group class="custom-input" [nzSuffix]="isShowTick('contact_phone') ? tick : noTick">
+            <input class="custom-input" nz-input formControlName="contact_phone" placeholder="Please enter your username or mobile number" id="phone" />
+          </nz-input-group>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item class="mb-4">
-        <nz-form-control style="text-align: left"  [nzSm]="24" [nzXs]="24" nzErrorTip="Please input your email">
-          <input class="custom-input" nz-input formControlName="email" placeholder="Please enter your email" id="email" />
+        <nz-form-control style="text-align: left" [nzSm]="24" [nzXs]="24" nzErrorTip="Please input your phone email!">
+          <nz-input-group class="custom-input" [nzSuffix]="isShowTick('email') ? tick : noTick">
+            <input class="custom-input" nz-input formControlName="email" placeholder="Please enter your email" id="email" />
+          </nz-input-group>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item class="mb-4">
-        <nz-form-control style="text-align: left"  [nzSm]="24" [nzXs]="24" nzErrorTip="Please input your address!">
-          <input class="custom-input" nz-input formControlName="address" placeholder="Please enter your address" id="address" />
+        <nz-form-control style="text-align: left" [nzSm]="24" [nzXs]="24" nzErrorTip="Please input your address!">
+          <nz-input-group class="custom-input" [nzSuffix]="isShowTick('address') ? tick : noTick">
+            <input class="custom-input" nz-input formControlName="address" placeholder="Please enter your address" id="address" />
+          </nz-input-group>
         </nz-form-control>
       </nz-form-item>
-
       <nz-form-item nz-row class="register-area mb-0 mb-4" >
         <nz-form-control class="text-center">
           <button class="w-100 custom-btn login text-uppercase" nz-button nzSize="large" nzType="default">UPDATE</button>
@@ -33,3 +40,9 @@
     </form>
   </section>
 </div>
+<ng-template #tick>
+  <img style="width: 18px;height: 18px;" src="content/images/tick.jpg" alt="logo-address">
+</ng-template>
+<ng-template #noTick>
+  <div style="width: 18px;height: 18px;background-color: #fff"></div>
+</ng-template>

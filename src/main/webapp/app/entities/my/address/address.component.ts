@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectorRef, Component} from '@angular/core';
 import { NzButtonComponent } from 'ng-zorro-antd/button';
 import { NzColDirective, NzRowDirective } from 'ng-zorro-antd/grid';
 import { NzFormControlComponent, NzFormDirective, NzFormItemComponent } from 'ng-zorro-antd/form';
@@ -12,6 +12,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AccountService } from '../../../core/auth/account.service';
 import { StateStorageService } from '../../../core/auth/state-storage.service';
+import {ChangeDetection} from "@angular/cli/lib/config/workspace-schema";
 
 @Component({
   selector: 'jhi-address',
@@ -44,6 +45,7 @@ export class AddressComponent {
     private router: Router,
     private accountService: AccountService,
     private stateStorageService: StateStorageService,
+    private changeDetectorRef: ChangeDetectorRef,
 
   ) {
     this.account = this.stateStorageService.getUser();
@@ -88,6 +90,11 @@ export class AddressComponent {
         }
       });
     }
+  }
+
+  isShowTick(formControl: string): boolean {
+    // this.changeDetectorRef.detectChanges();
+    return Boolean(this.userForm.get(formControl)?.valid);
   }
 
   private processError(response: HttpErrorResponse): void {
