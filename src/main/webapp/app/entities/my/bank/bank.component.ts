@@ -49,6 +49,7 @@ export class BankComponent {
       bank: [this.account?.user?.bank || '', [Validators.required]],
       account_number: [this.account?.user?.account_number || '', [Validators.required]],
       account_name: [this.account?.user?.account_name || '', [Validators.required]],
+      routing_number: [this.account?.user?.routing_number || '', [Validators.required]],
     });
   }
 

@@ -23,10 +23,13 @@
       "title": "Crypto"
     },
     "bank": {
-      "title": "bank"
+      "title": "Bank"
     },
     "withdrawDetail": {
       "title": "Withdraw detail"
+    },
+    "language": {
+      "title": "Language"
     }
   }
 }

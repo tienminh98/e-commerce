@@ -76,7 +76,7 @@ export class WithdawDetailComponent {
             this.accountService.fetch().pipe(tap(_ => this.router.navigate(['/my']).then())).subscribe();
           }
         }, err => {
-          this.createNotification('error', err.message);
+          this.createNotification('error', err.error.message);
         })
       } else {
         Object.values(this.withdrawForm.controls).forEach(control => {
