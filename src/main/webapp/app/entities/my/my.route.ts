@@ -9,6 +9,7 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
 import {CryptoComponent} from "./crypto/crypto.component";
 import {BankComponent} from "./bank/bank.component";
 import {WithdawDetailComponent} from "./withdaw-detail/withdaw-detail.component";
+import { LanguageComponent } from './language/language.component';
 
 const myRoute: Routes = [
   {
@@ -60,6 +61,11 @@ const myRoute: Routes = [
     path: 'withdraw-detail',
     component: WithdawDetailComponent,
     title: 'my.withdrawDetail.title'
+  },
+  {
+    path: 'language',
+    component: LanguageComponent,
+    title: 'my.language.title'
   }
   ];
 

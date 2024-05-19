@@ -34,7 +34,7 @@ export class MyComponent {
     {img: this.handleImg('ft5'), title: 'Payment Card', url: '/bank'},
     {img: this.handleImg('ft6'), title: 'Crypto', url: '/crypto'},
     {img: this.handleImg('ft7'), title: 'Platform Introduction', url: '/platform-intro'},
-    {img: this.handleImg('ft8'), title: 'Language', url: '/test'},
+    {img: this.handleImg('ft8'), title: 'Language', url: '/language'},
     {img: this.handleImg('ft9'), title: 'Log out', url: null},
   ]
 

@@ -22,6 +22,12 @@
           <input nz-input formControlName="account_name" id="account_name" />
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="routing_number">Routing number</nz-form-label>
+        <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid routing number!">
+          <input nz-input formControlName="routing_number" id="routing_number" />
+        </nz-form-control>
+      </nz-form-item>
       <div class="crypto-info mt-4">
         <h3 class="title">Additional information</h3>
         <div class="d-flex justify-content-between mb-3">
