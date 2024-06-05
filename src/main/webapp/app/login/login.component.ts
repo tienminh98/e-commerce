@@ -42,6 +42,18 @@ export default class LoginComponent implements OnInit, AfterViewInit {
   isShowPassword = false;
   loginForm!: FormGroup;
 
+  gridList = [
+    'content/images/grid0.png',
+    'content/images/grid1.png',
+    'content/images/grid2.png',
+    'content/images/grid3.png',
+    'content/images/grid4.png',
+    'content/images/grid5.png',
+    'content/images/grid6.png',
+    'content/images/grid7.png',
+    'content/images/grid8.png'
+  ]
+
   constructor(
     private accountService: AccountService,
     private loginService: LoginService,
