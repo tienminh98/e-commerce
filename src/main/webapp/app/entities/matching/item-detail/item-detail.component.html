@@ -1,8 +1,8 @@
-<div *ngIf="data" class="container position-relative">
+<div class="container position-relative">
   <section class="banner">
     <img src="content/images/logos.png" alt="logo" style="width: 100px;height: 50px">
   </section>
-  <div class="wrapper mt-4" [class.show-order]="isChecked">
+  <div *ngIf="data" class="wrapper mt-4" [class.show-order]="isChecked">
     <section class="product">
       <img style="width: 100%;height: 300px;object-fit: contain" [src]="hostBase + data?.image" [alt]="data?.name">
       <div style="text-align: left" class="mb-4">
@@ -85,6 +85,9 @@
         </form>
       </div>
     </section>
+  </div>
+  <div *ngIf="!isTimeToBuy" style="font-size: 1.9rem;height: calc(100vh - 250px);display: flex;align-items: center;">
+    Order tasks are currently being processed and ready for customers from 10:00 a.m to 10:00 p.m New York time'
   </div>
 </div>
 <ng-template #notificationBtnTpl let-notification>

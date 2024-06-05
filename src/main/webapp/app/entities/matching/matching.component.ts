@@ -32,17 +32,6 @@ export class MatchingComponent {
   }
 
   getProducts(): void {
-    if (this.matchingService.isProceed()) {
-      this.router.navigate(['detail'], {relativeTo: this.route}).then();
-    }
-    else {
-      this.notification.create('warning',
-        'Order tasks are currently being processed and ready for customers from 10:00 a.m. to 10:00 p.m. New York time.',
-        '', {
-          nzStyle: {
-            textAlign: 'left',
-            width: '500px'
-          }})
-    }
+    this.router.navigate(['detail'], {relativeTo: this.route}).then();
   }
 }

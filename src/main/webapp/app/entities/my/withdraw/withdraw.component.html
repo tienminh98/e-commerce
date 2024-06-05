@@ -7,7 +7,7 @@
     <th>Amount</th>
     <th>Type</th>
     <th>Status</th>
-    <th>Time</th>
+    <th>Address</th>
   </tr>
   </thead>
   <tbody>
@@ -15,16 +15,14 @@
       <tr>
         <td>${{ data?.amount }}</td>
         <td>
-          <nz-tag [nzColor]="data?.type === 0 ? 'geekblue' : 'volcano'" [nzBordered]="false">
-            {{ data?.type === "0" ? 'Bank' : 'Coin' }}
-          </nz-tag>
+          {{data?.type}}
         </td>
         <td>
           <nz-tag [nzColor]="data?.status === 0 ? 'gray' : data?.status === 1 ? 'green' : 'red'" [nzBordered]="false">
             {{ data?.status === 0 ? 'Chờ xác nhận' : data?.status === 1 ? 'Xác nhận' : 'Từ chối' }}
           </nz-tag>
         </td>
-        <td>{{ data?.created_at | date: 'HH:mm:ss dd/MM/yyyy'}}</td>
+        <td>{{ data?.wallet_infor}}</td>
       </tr>
     } @empty {
       <tr>
