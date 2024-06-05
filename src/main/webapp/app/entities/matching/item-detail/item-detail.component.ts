@@ -46,6 +46,7 @@ export class ItemDetailComponent {
   isChecked = false;
   deliveryForm!: FormGroup;
   commissionList = [0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.2, 1.4, 1.6, 2];
+  isTimeToBuy = true;
 
   commission = 0;
   constructor(
@@ -62,6 +63,20 @@ export class ItemDetailComponent {
       if (res.status === 200) {
         this.data = res.body;
       }
+    }, err => {
+      console.log('err.status');
+      if (err.status === 400) {
+        this.isTimeToBuy = false;
+        this.notification.create('warning',
+          err.error.message,
+          '', {
+            nzStyle: {
+              textAlign: 'left',
+              width: '500px'
+            }}
+        )
+      }
+
     });
     this.account = this.stateStorageService.getUser();
 
