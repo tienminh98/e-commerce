@@ -67,43 +67,43 @@ export default class HomeComponent implements OnInit, OnDestroy {
     this.annList = [
       {
         cardNumber: '[****2512]',
-        money: 180698,
+        money: '180,698.33',
       },
       {
         cardNumber: '[****2190]',
-        money: 2193,
+        money: '2,193.22',
       },
       {
         cardNumber: '[****4121]',
-        money: 15612,
+        money: '15,612.42',
       },
       {
         cardNumber: '[****7567]',
-        money: 31334,
+        money: '31,334.13',
       },
       {
         cardNumber: '[****9299]',
-        money: 1244,
+        money: '1,244.33',
       },
       {
         cardNumber: '[****0678]',
-        money: 91249,
+        money: '91,249.33',
       },
       {
         cardNumber: '[****0510]',
-        money: 641814,
+        money: '6,418.14',
       },
       {
         cardNumber: '[****1388]',
-        money: 41241,
+        money: '412.41',
       },
       {
         cardNumber: '[****5321]',
-        money: 9129,
+        money: '9,129.11',
       },
       {
         cardNumber: '[****3233]',
-        money: 21980,
+        money: '21,980.12',
       },
       {
         cardNumber: '[****7138]',

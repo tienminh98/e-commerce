@@ -58,7 +58,7 @@ export default class RegisterComponent implements AfterViewInit {
     private router: Router,
   ) {
     this.registerForm = this.fb.group({
-      countryCode: ['+84'],
+      countryCode: ['+1'],
       phone: [null, [Validators.required, Validators.pattern(/^\d+$/)]],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],

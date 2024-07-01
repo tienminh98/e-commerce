@@ -2,28 +2,58 @@
   <div class="banner">
     <img src="content/images/logo.png" alt="logo" style="width: 138px;height: 50px;">
   </div>
+  <div class="text-left">
+    <p>ABOUT US</p>
+    <h1>Lyst is a fashion technology company and premium shopping app.</h1>
+    <h1>For over 150 million annual shoppers, we offer the most comprehensive range of products from 17,000 of the
+      world's leading brands and stores.</h1>
+    <h1>For brands and stores, our goal is to power success online. We drive meaningful direct sales within a highly
+      trusted brand environment.</h1>
+  </div>
+  <div class="row no-gutters" style="border-top: 1px solid black; margin: 0 0 10px 0">
+    <div class="col-4 position-relative p-0 text-left">
+      <div class="top-border"></div>
+      <p>8,000,000+</p>
+      <h2>Products can be discovered and bought through the Lyst website and app</h2>
+    </div>
+    <div class="col-4 position-relative p-0 text-left">
+      <div class="top-border"></div>
+      <p>#1</p>
+      <h2>The Lyst app is the most downloaded premium fashion iOS app globally*</h2>
+    </div>
+    <div class="col-4 position-relative p-0 text-left">
+      <div class="top-border"></div>
+      <p>$2BN</p>
+      <h2>Lyst GMV run rate exceeds $2bn USD</h2>
+    </div>
+  </div>
+  <img style="width: 100%;
+    height: 234px;
+    object-fit: cover;" src="content/images/m10.jpg" alt="item">
   <div class="container mt-2">
     <div class="order-card shadow">
       <div class="text-start p-4">
         <div class="title">Available balance</div>
-        <div class="order-number mt-2">${{account?.user?.wallet}}</div>
+        <div class="order-number mt-2">${{ account?.user?.wallet }}</div>
       </div>
-      <div class="order-check d-flex">
+      <div class="order-check d-flex justify-content-between">
         <div class="check-item">
           <div class="check-title">Commission</div>
-          <div class="check-number">${{account?.total_commission}}</div>
+          <div class="check-number">${{ account?.total_commission }}</div>
         </div>
         <div class="check-item">
           <div class="check-title">Order quantity</div>
-          <div class="check-number">{{account?.maxOrdersPerDay}}</div>
+          <div class="check-number">{{ account?.maxOrdersPerDay }}</div>
         </div>
         <div class="check-item">
           <div class="check-title">Your orders</div>
-          <div class="check-number">{{account?.ordersToday}}</div>
+          <div class="check-number">{{ account?.ordersToday }}</div>
         </div>
       </div>
       <div class="p-4">
-        <button (click)="getProducts()" class="w-100 custom-btn text-uppercase" nz-button nzSize="large" nzType="default">Take Orders</button>
+        <button (click)="getProducts()" class="w-100 custom-btn text-uppercase" nz-button nzSize="large"
+                nzType="default">Take Orders
+        </button>
       </div>
     </div>
   </div>
@@ -38,15 +68,16 @@
 <section class="product">
   <div class="container">
     <div class="row no-gutters">
-      @for (item of productList;track i;let i = $index) {
-          <div class="product-item col-6">
-            <a [routerLink]="['./', item?.id]">
-              <img style="width: 196px;height: 112px;object-fit: contain" [src]="hostBase + item?.image" [alt]="hostBase + item?.name">
-              <div class="title">{{ item?.name }}</div>
-              <div class="price">${{ item?.price }}</div>
-            </a>
-          </div>
+      @for (item of productList; track i; let i = $index) {
+        <div class="product-item col-6">
+          <a [routerLink]="['./', item?.id]">
+            <img style="width: 196px;height: 112px;object-fit: contain" [src]="hostBase + item?.image"
+                 [alt]="hostBase + item?.name">
+            <div class="title">{{ item?.name }}</div>
+            <div class="price">${{ item?.price }}</div>
+          </a>
+        </div>
       }
-  </div>
+    </div>
   </div>
 </section>
