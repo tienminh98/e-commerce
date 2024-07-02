@@ -188,6 +188,12 @@ Main page styles
   background: linear-gradient(to top, #fff, transparent);
 }
 
+.image-category {
+  width: 100%;
+  height: auto;
+  border-radius: 40px;
+}
+
 @keyframes scroll {
   0% {
     transform: translateY(-130px);

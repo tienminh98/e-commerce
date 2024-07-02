@@ -20,8 +20,7 @@
   }
   &-number {
     font-size: 3rem;
-    color: #00D0EA;
-    font-weight: normal;
+    color: black;
   }
   &-check {
     width: 90%;
@@ -95,4 +94,23 @@
     border-color: #00d0eab8;
     background: #00d0eab8;
   }
+}
+
+.top-border {
+  width: 1px;
+  height: 30px;
+  background-color: black;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 1.1rem;
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: .7rem;
+  font-weight: 600;
+  line-height: 11px;
 }
