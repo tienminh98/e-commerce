@@ -194,6 +194,20 @@ Main page styles
   border-radius: 40px;
 }
 
+.image-lg {
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.text-lg {
+  p {
+    font-size: 1.1rem;
+    line-height: 16px;
+  }
+}
+
 @keyframes scroll {
   0% {
     transform: translateY(-130px);

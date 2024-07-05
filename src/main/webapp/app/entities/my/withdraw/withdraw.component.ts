@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NzIconDirective } from 'ng-zorro-antd/icon';
-import { NzTableComponent } from 'ng-zorro-antd/table';
+import {NzCellBreakWordDirective, NzCellFixedDirective, NzTableComponent} from 'ng-zorro-antd/table';
 import { NzTagComponent } from 'ng-zorro-antd/tag';
 import { DetailBillsService } from '../detail-bills/detail-bills.service';
 import { finalize } from 'rxjs/operators';
@@ -13,7 +13,9 @@ import { DatePipe } from '@angular/common';
     NzIconDirective,
     NzTableComponent,
     NzTagComponent,
-    DatePipe
+    DatePipe,
+    NzCellBreakWordDirective,
+    NzCellFixedDirective
   ],
   templateUrl: './withdraw.component.html',
   styleUrl: './withdraw.component.scss'
