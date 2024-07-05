@@ -62,12 +62,6 @@
         </div>
       </div>
     }
-    <swiper-container class="swiper" slides-per-view="1" speed="500" loop="true" autoplay-delay="2500"
-                      autoplay-disable-on-interaction="false">
-      @for (memberImage of memberImageList; track i; let i = $index) {
-        <swiper-slide [attr.id]="i"><img style="width: 100%;height: 280px" [src]="memberImage"></swiper-slide>
-      }
-    </swiper-container>
   </section>
   <section class="ann">
     <div class="title">- Announcement -</div>
@@ -89,18 +83,6 @@
           }
         </swiper-container>
       </div>
-    </div>
-  </section>
-  <section class="social-network mt-3">
-    <div class="d-flex">
-      <a class="w-20" href=""><img style="width: 25px;height: 25px;" src="content/images/l1.png" alt="instar"></a>
-      <a class="w-20" href=""><img style="width: 25px;height: 25px;" src="content/images/l2.png" alt="fb"></a>
-      <a class="w-20" href=""><img style="width: 25px;height: 25px;" src="content/images/l3.png" alt="pri"></a>
-      <a class="w-20" href=""><img style="width: 25px;height: 25px;" src="content/images/l4.png" alt="twi"></a>
-      <a class="w-20" href=""><img style="width: 25px;height: 25px;" src="content/images/l5.png" alt="ytb"></a>
-    </div>
-    <div class="text">
-      ©2024. OFF5TH  CA Transparency in Supply Chains Act
     </div>
   </section>
 </div>

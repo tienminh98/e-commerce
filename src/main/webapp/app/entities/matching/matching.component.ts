@@ -20,6 +20,8 @@ export class MatchingComponent {
   account!: any;
   hostBase = 'https\://lyst686.com/admin/storage/app/public/';
   productList: any[] = [];
+  numberOfPeople!: any;
+  private intervalId: any;
 
   constructor(
     private matchingService: MatchingService,
@@ -30,8 +32,26 @@ export class MatchingComponent {
   ) {
     this.account = stateStorageService.getUser();
   }
+  ngOnInit(): void {
+    this.updateNumberOfPeople();
+    this.intervalId = setInterval(() => {
+      this.updateNumberOfPeople();
+    }, 4000); // cập nhật mỗi 5 giây
+  }
 
+  ngOnDestroy(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
   getProducts(): void {
     this.router.navigate(['detail'], {relativeTo: this.route}).then();
+  }
+  getRandomNumber(min: number, max: number): string {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    return randomNumber.toLocaleString();
+  }
+  updateNumberOfPeople(): void {
+    this.numberOfPeople = this.getRandomNumber(10000, 150000);
   }
 }
