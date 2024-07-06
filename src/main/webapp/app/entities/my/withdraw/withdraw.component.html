@@ -7,7 +7,7 @@
     <th>Amount</th>
     <th>Type</th>
     <th>Status</th>
-    <th>Address</th>
+    <th style="max-width: 30%">Address</th>
   </tr>
   </thead>
   <tbody>
@@ -22,7 +22,13 @@
             {{ data?.status === 0 ? 'Wait for confirmation' : data?.status === 1 ? 'Confirm' : 'Refuse' }}
           </nz-tag>
         </td>
-        <td>{{ data?.wallet_infor}}</td>
+        <td nzBreakWord>
+          <div style="max-width: 80%;
+    line-height: 20px;
+    text-align: left;">
+            {{ data?.wallet_infor}}
+          </div>
+        </td>
       </tr>
     } @empty {
       <tr>
