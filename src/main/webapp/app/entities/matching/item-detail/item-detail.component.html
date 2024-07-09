@@ -77,6 +77,32 @@
               <input nz-input formControlName="email" id="email" />
             </nz-form-control>
           </nz-form-item>
+          <div class="d-flex justify-content-between">
+            <nz-form-item style="width: 32%">
+              <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="city">City</nz-form-label>
+              <nz-form-control [nzSm]="24" [nzXs]="24">
+                <input nz-input formControlName="city" id="city" />
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item style="width: 32%">
+              <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="stage">Stage</nz-form-label>
+              <nz-form-control [nzSm]="24" [nzXs]="24">
+                <input nz-input formControlName="stage" id="stage" />
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item style="width: 32%">
+              <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="zip_code">Zip Code</nz-form-label>
+              <nz-form-control [nzSm]="24" [nzXs]="24">
+                <input nz-input formControlName="zip_code" id="zip_code" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <nz-form-item class="mb-3">
+            <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="nation">Nation</nz-form-label>
+            <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not nation!">
+              <input nz-input formControlName="nation" id="nation" />
+            </nz-form-control>
+          </nz-form-item>
           <nz-form-item nz-row class="register-area mb-0" >
             <nz-form-control class="text-center">
               <button class="w-100 custom-btn text-uppercase" nz-button nzSize="large" nzType="default">CHECKOUT</button>

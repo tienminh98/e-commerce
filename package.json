@@ -1,8 +1,8 @@
 {
-  "name": "ec",
+  "name": "lyst",
   "version": "0.0.1-SNAPSHOT",
   "private": true,
-  "description": "Description for Ec",
+  "description": "Description for http://localhost:9000/",
   "license": "UNLICENSED",
   "scripts": {
     "build": "npm run webapp:prod --",

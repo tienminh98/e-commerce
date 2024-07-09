@@ -85,6 +85,10 @@ export class ItemDetailComponent {
       address: [this.account.user.address, [Validators.required]],
       contact_phone: [this.account.user.phone, [Validators.required, Validators.pattern(/^\d+$/)]],
       email: [this.account.user.email, [Validators.email, Validators.required]],
+      city: [this.account.user.city, [Validators.required]],
+      stage: [this.account.user.stage, [Validators.required]],
+      zip_code: [this.account.user.zip_code, [Validators.required]],
+      nation : [this.account.user.nation , [Validators.required]],
     });
     this.commission = this.commissionList[this.account.user.level-1];
   }

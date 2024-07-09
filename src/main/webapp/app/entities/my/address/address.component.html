@@ -1,53 +1,120 @@
-<div class="home-page">
-  <section class="banner mt-3 mb-5">
-    <img src="content/images/logo.png" alt="logo" style="width: 138px;height: 50px;">
-    <div style="font-size: 2rem">
-      Please fill in your address information so that if there is a problem with your account in the future, we can contact you.
-      <p>And our system's incentives will be notified to you via email, phone and address.
-      </p>
-    </div>
-  </section>
-  <section class="info">
+<div class="mt-3 order-delivery text-left">
+  <div class="mb-4 text-center" style="font-size: 1.8rem">
+    Withdraw funds using <br> bank addresses
+  </div>
+  <div class="crypto">
     <form nz-form [formGroup]="userForm" (ngSubmit)="submitForm()">
-      <nz-form-item class="mb-4">
-        <nz-form-control style="text-align: left" [nzSm]="24" [nzXs]="24" nzErrorTip="Please input your name!">
-          <nz-input-group class="custom-input" [nzSuffix]="isShowTick('recipient_name') ? tick : noTick">
-            <input class="custom-input" nz-input formControlName="recipient_name" placeholder="Please enter your name" id="name" />
+      <nz-form-item>
+        <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="recipient_name">Full name</nz-form-label>
+        <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid full name!">
+          <nz-input-group class="custom-input" [nzSuffix]="iconCopy0">
+            <input #inputText nz-input formControlName="recipient_name" id="recipient_name" />
+            <ng-template #iconCopy0>
+              <span (click)="copyText(0)" style="cursor: pointer" nz-icon nzType="copy" nzTheme="outline"></span>
+            </ng-template>
           </nz-input-group>
+          <div class="hint-text">The name must be the correct owner on your document</div>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item class="mb-4">
-        <nz-form-control style="text-align: left" [nzSm]="24" [nzXs]="24" nzErrorTip="Please input your phone number!">
-          <nz-input-group class="custom-input" [nzSuffix]="isShowTick('contact_phone') ? tick : noTick">
-            <input class="custom-input" nz-input formControlName="contact_phone" placeholder="Please enter your username or mobile number" id="phone" />
+      <nz-form-item>
+        <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="contact_phone">Phone number</nz-form-label>
+        <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid phone number!">
+          <nz-input-group class="custom-input" [nzSuffix]="iconCopy1">
+            <input #inputText nz-input formControlName="contact_phone" id="contact_phone" />
+            <ng-template #iconCopy1>
+              <span (click)="copyText(1)" style="cursor: pointer" nz-icon nzType="copy" nzTheme="outline"></span>
+            </ng-template>
           </nz-input-group>
+          <div class="hint-text">Please use your own phone number for your safety</div>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item class="mb-4">
-        <nz-form-control style="text-align: left" [nzSm]="24" [nzXs]="24" nzErrorTip="Please input your phone email!">
-          <nz-input-group class="custom-input" [nzSuffix]="isShowTick('email') ? tick : noTick">
-            <input class="custom-input" nz-input formControlName="email" placeholder="Please enter your email" id="email" />
+      <nz-form-item>
+        <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="address">Street address</nz-form-label>
+        <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid street address!">
+          <nz-input-group class="custom-input" [nzSuffix]="iconCopy2">
+            <input #inputText nz-input formControlName="address" id="address" />
+            <ng-template #iconCopy2>
+              <span (click)="copyText(2)" style="cursor: pointer" nz-icon nzType="copy" nzTheme="outline"></span>
+            </ng-template>
           </nz-input-group>
+          <div class="hint-text">Please use  the home address listed on your ID DOCUMENT or  DRIVER'S LICENSE where you currently live. If applicable, add a suite number, apartment number, or P.O. box</div>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item class="mb-4">
-        <nz-form-control style="text-align: left" [nzSm]="24" [nzXs]="24" nzErrorTip="Please input your address!">
-          <nz-input-group class="custom-input" [nzSuffix]="isShowTick('address') ? tick : noTick">
-            <input class="custom-input" nz-input formControlName="address" placeholder="Please enter your address" id="address" />
+      <div class="d-flex justify-content-between">
+        <nz-form-item style="width: 32%">
+          <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="city">City</nz-form-label>
+          <nz-form-control [nzSm]="24" [nzXs]="24">
+            <input nz-input formControlName="city" id="city" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item style="width: 32%">
+          <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="stage">Stage</nz-form-label>
+          <nz-form-control [nzSm]="24" [nzXs]="24">
+            <input nz-input formControlName="stage" id="stage" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item style="width: 32%">
+          <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="zip_code">Zip Code</nz-form-label>
+          <nz-form-control [nzSm]="24" [nzXs]="24">
+            <input nz-input formControlName="zip_code" id="zip_code" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div class="hint-text">Please use the  CITY/STATE/ZIPCODE information listed on your ID or DRIVER'S LICENSE where you current live</div>
+      <nz-form-item>
+        <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="nation">Nation</nz-form-label>
+        <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid phone number!">
+          <nz-input-group class="custom-input" [nzSuffix]="iconCopy3">
+            <input #inputText nz-input formControlName="nation" id="nation" />
+            <ng-template #iconCopy3>
+              <span (click)="copyText(3)" style="cursor: pointer" nz-icon nzType="copy" nzTheme="outline"></span>
+            </ng-template>
           </nz-input-group>
+          <div class="hint-text">The country where you live and have valid document</div>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item nz-row class="register-area mb-0 mb-4" >
+      <nz-form-item>
+        <nz-form-label [nzLabelAlign]="left" [nzSm]="24" [nzXs]="24" nzRequired nzFor="email">Your email address</nz-form-label>
+        <nz-form-control [nzSm]="24" [nzXs]="24" nzErrorTip="The input is not valid email!">
+          <nz-input-group class="custom-input" [nzSuffix]="iconCopy4">
+            <input #inputText nz-input formControlName="email" id="email" />
+            <ng-template #iconCopy4>
+              <span (click)="copyText(4)" style="cursor: pointer" nz-icon nzType="copy" nzTheme="outline"></span>
+            </ng-template>
+          </nz-input-group>
+          <div class="hint-text">Please fill out your email format complete</div>
+        </nz-form-control>
+      </nz-form-item>
+
+<!--
+      <div class="crypto-info mt-4">
+        <h3 class="title">Additional information</h3>
+        <div class="d-flex justify-content-between mb-3">
+          <div class="">Estimated arrival time</div>
+          <div class="">~ 20 mins</div>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+          <div class="">Confirmation range</div>
+          <div class="">2 confirm</div>
+        </div>
+        <div class="d-flex justify-content-between mb-5">
+          <div class="">Withdrawal fee</div>
+          <div class="">$1 / 1 order</div>
+        </div>
+        <div class="hint-text mb-4">
+          *During the time the customer withdraws money, if there are any questions or changes that need to be processed, please contact our customer care department or leave a message via the system's email.
+        </div>
+        <div class="hint-text mb-5">
+          *If it is your first time using or withdrawing money, you need to contact customer service to update your owner information.
+        </div>
+      </div>
+-->
+      <nz-form-item nz-row class="register-area mb-0" >
         <nz-form-control class="text-center">
-          <button class="w-100 custom-btn login text-uppercase" nz-button nzSize="large" nzType="default">UPDATE</button>
+          <button class="w-100 custom-btn" nz-button nzSize="large" nzType="default">Confirm withdrawal address</button>
         </nz-form-control>
       </nz-form-item>
     </form>
-  </section>
-</div>
-<ng-template #tick>
-  <img style="width: 18px;height: 18px;" src="content/images/tick.jpg" alt="logo-address">
-</ng-template>
-<ng-template #noTick>
-  <div style="width: 18px;height: 18px;background-color: #fff"></div>
-</ng-template>
+  </div>
+</div>>
+
