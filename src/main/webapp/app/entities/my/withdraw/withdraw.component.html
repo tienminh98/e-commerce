@@ -19,7 +19,7 @@
         </td>
         <td>
           <nz-tag [nzColor]="data?.status === 0 ? 'gray' : data?.status === 1 ? 'green' : 'red'" [nzBordered]="false">
-            {{ data?.status === 0 ? 'Chờ xác nhận' : data?.status === 1 ? 'Xác nhận' : 'Từ chối' }}
+            {{ data?.status === 0 ? 'Wait for confirmation' : data?.status === 1 ? 'Confirm' : 'Refuse' }}
           </nz-tag>
         </td>
         <td nzBreakWord>

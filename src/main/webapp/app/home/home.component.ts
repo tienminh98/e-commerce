@@ -29,7 +29,19 @@ export default class HomeComponent implements OnInit, OnDestroy {
   commodityList: any[] = [];
   memberList: any[] = [];
   memberImageList: any[] = [];
-  annList: any[] = [];
+  annList = [
+    { cardNumber: '[****2512]', money: '180,698.33' },
+    { cardNumber: '[****2190]', money: '2,193.22' },
+    { cardNumber: '[****4121]', money: '15,612.42' },
+    { cardNumber: '[****7567]', money: '31,334.13' },
+    { cardNumber: '[****9299]', money: '1,244.33' },
+    { cardNumber: '[****0678]', money: '91,249.33' },
+    { cardNumber: '[****0510]', money: '6,418.14' },
+    { cardNumber: '[****1388]', money: '412.41' },
+    { cardNumber: '[****5321]', money: '9,129.11' },
+    { cardNumber: '[****3233]', money: '21,980.12' },
+    { cardNumber: '[****7138]', money: '1,980.12' },
+  ];
   levelList: any = [];
 
   public targetList = [
@@ -64,52 +76,13 @@ export default class HomeComponent implements OnInit, OnDestroy {
       cardNumber: '[****1806]',
       money: 251221,
     }));*/
-    this.annList = [
-      {
-        cardNumber: '[****2512]',
-        money: '180,698.33',
-      },
-      {
-        cardNumber: '[****2190]',
-        money: '2,193.22',
-      },
-      {
-        cardNumber: '[****4121]',
-        money: '15,612.42',
-      },
-      {
-        cardNumber: '[****7567]',
-        money: '31,334.13',
-      },
-      {
-        cardNumber: '[****9299]',
-        money: '1,244.33',
-      },
-      {
-        cardNumber: '[****0678]',
-        money: '91,249.33',
-      },
-      {
-        cardNumber: '[****0510]',
-        money: '6,418.14',
-      },
-      {
-        cardNumber: '[****1388]',
-        money: '412.41',
-      },
-      {
-        cardNumber: '[****5321]',
-        money: '9,129.11',
-      },
-      {
-        cardNumber: '[****3233]',
-        money: '21,980.12',
-      },
-      {
-        cardNumber: '[****7138]',
-        money: 30193,
-      },
-    ]
+    this.annList = this.shuffleArray(this.annList);
+
+    // Randomize the money values
+    this.annList.forEach(item => {
+      item.money = this.randomMoney();
+      item.cardNumber = this.randomCardNumber();
+    });
     this.accountService.levels().subscribe(res => {
       if (res.status === 200) {
         this.levelList = res.body;
@@ -143,5 +116,29 @@ export default class HomeComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
+  shuffleArray(array: any[]): any[] {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  randomMoney(): string {
+    const min = 100; // giá trị tối thiểu của money
+    const max = 100000; // giá trị tối đa của money
+    return this.numberFormat(Math.random() * (max - min) + min, 2, '.', ',');
+  }
+
+  private numberFormat(number: number, decimals: number, decPoint: string, thousandsSep: string): string {
+    const fixedNumber = number.toFixed(decimals);
+    const parts = fixedNumber.split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSep);
+    return parts.join(decPoint);
+  }
+  randomCardNumber(): string {
+    const randomDigits = Math.floor(1000 + Math.random() * 9000).toString();
+    return `[****${randomDigits}]`;
+  }
   protected readonly Number = Number;
 }

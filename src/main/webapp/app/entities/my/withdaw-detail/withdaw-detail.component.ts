@@ -74,6 +74,8 @@ export class WithdawDetailComponent {
           if (res.status === 200) {
             this.createNotification('success', res.body.message);
             this.accountService.fetch().pipe(tap(_ => this.router.navigate(['/my']).then())).subscribe();
+          }else if (res.status === 400) {
+            this.createNotification('error', res.body.message);
           }
         }, err => {
           this.createNotification('error', err.error.message);
